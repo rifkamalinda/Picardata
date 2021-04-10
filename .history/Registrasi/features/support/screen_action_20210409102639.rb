@@ -1,6 +1,6 @@
 def screenshot(name)
     $driver.save_screenshot("features/ss/#{name}.png")
-    attach("features/ss/#{name}.png","image/png")
+    embed("features/ss/#{name}.png","image/png")
 end
 
 def open_url(url)

@@ -3,7 +3,7 @@ Feature: Integrated to Hubspot
 
 @Integration_Acc
 Scenario: Verify user can integrated to Hubspot
-And user should see text home screen
+And user should see text "Copyright © Picardata 2021"
 When user click on App Library
 Then user should see Homepage
 And user click on Add to Picardata

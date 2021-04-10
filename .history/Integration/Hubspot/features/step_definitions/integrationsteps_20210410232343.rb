@@ -25,10 +25,14 @@ end
   
 Then('user click on Add to Picardata') do
   $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div/div[2]/div[5]/div/div/div[3]/button').click
-  sleep(5)
+  sleep(10)
   screenshot("hubspot-intg01")
   sleep(5)
+end
+  
+Then('user click on Integrate button') do
   original_window = $driver.window_handle
+  #assert ($driver.window_handle.length == 1)
   $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div/div[2]/div[7]/div/div/div[3]/a').click
   wait = Selenium::WebDriver::Wait.new(:timeout => 10)
   window = wait.until { $driver.window_handle.length == 2 }
@@ -38,11 +42,6 @@ Then('user click on Add to Picardata') do
       return
     end
   end
-end
-  
-Then('user click on Integrate button') do
-  #$driver.manage.timeouts.page_load = 50
-  wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+  waiting(10)
   window = wait.until { $driver.title == "Connecting Picardata Demo App to HubSpot" }
-  waiting(5)
 end

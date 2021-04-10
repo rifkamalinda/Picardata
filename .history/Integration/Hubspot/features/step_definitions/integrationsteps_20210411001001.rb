@@ -41,8 +41,8 @@ Then('user click on Add to Picardata') do
 end
   
 Then('user click on Integrate button') do
-  #$driver.manage.timeouts.page_load = 50
-  wait = Selenium::WebDriver::Wait.new(:timeout => 10)
+  $driver.manage.timeouts.page_load = 50
+  wait = Selenium::WebDriver::Wait.new(:timeout => 50)
   window = wait.until { $driver.title == "Connecting Picardata Demo App to HubSpot" }
   waiting(5)
 end

@@ -1,3 +1,4 @@
+import undetected_chromedriver as uc
 require_relative '../support/screen_action.rb'
 require_relative '../support/hook.rb'
 
@@ -28,6 +29,7 @@ Then('user click on Add to Picardata') do
   sleep(5)
   screenshot("hubspot-intg01")
   sleep(5)
+  $driver = uc.Chrome()
   original_window = $driver.window_handle
   $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div/div[2]/div[7]/div/div/div[3]/a').click
   wait = Selenium::WebDriver::Wait.new(:timeout => 10)
