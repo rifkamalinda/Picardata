@@ -5,7 +5,7 @@ RSpec::Expectations::ExpectationNotMetError
 
 And('user should see text home screen') do 
   homec
-  waiting(10)
+  waiting(60)
 end
   
 When('user click on App Library') do
