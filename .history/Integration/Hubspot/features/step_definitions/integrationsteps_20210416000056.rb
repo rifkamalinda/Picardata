@@ -9,14 +9,12 @@ And('user should see text home screen') do
 end
   
 When('user click on App Library') do
-  #element = $driver.find_element(:xpath, '/html/body/div/div/div/div[2]/div/div[2]/ul/li[2]/a')
-  #$driver.action.move_to(element).perform
-  #waiting(5)
-  hs = $driver.find_element(:xpath, '/html/body/div/div/div/div[2]/div/div[2]/ul/li[2]/a')
-  $driver.execute_script("arguments[0].click();", hs)
+  element = $driver.find_element(:xpath, '/html/body/div/div/div/div[2]/div/div[2]/ul/li[2]/a')
+  $driver.action.move_to(element).perform
+  waiting(5)
+  $driver.find_element(:xpath, '/html/body/div/div/div/div[2]/div/div[2]/ul/li[2]/a').click
   sleep(3)
-  sh = $driver.find_element(:xpath, '/html/body/div/div/div/div[2]/div/div[2]/ul/li[2]/div/ul/li[3]/a')
-  $driver.execute_script("arguments[0].click();", sh)
+  $driver.find_element(:xpath, '/html/body/div/div/div/div[2]/div/div[2]/ul/li[2]/div/ul/li[3]/a').click
   waiting(10)
 end
   
@@ -28,12 +26,8 @@ end
 Then('user click on Add to Picardata') do
   $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div/div[2]/div[5]/div/div/div[3]/button').click
   sleep(5)
-  #screenshot("hubspot-intg01")
-  #sleep(5)
-end
-  
-Then('user click on Integrate button') do
-  #$driver.manage.timeouts.page_load = 50
+  screenshot("hubspot-intg01")
+  sleep(5)
   original_window = $driver.window_handle
   $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div/div[2]/div[7]/div/div/div[3]/a').click
   wait = Selenium::WebDriver::Wait.new(:timeout => 10)
@@ -44,6 +38,10 @@ Then('user click on Integrate button') do
       return
     end
   end
+end
+  
+Then('user click on Integrate button') do
+  #$driver.manage.timeouts.page_load = 50
   wait = Selenium::WebDriver::Wait.new(:timeout => 10)
   window = wait.until { $driver.title == "Connecting Picardata Demo App to HubSpot" }
   waiting(5)

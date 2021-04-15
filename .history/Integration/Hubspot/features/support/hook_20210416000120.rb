@@ -3,8 +3,8 @@ Before do
    options.add_argument('--headless')
    $driver = Selenium::WebDriver.for :chrome, options: options 
    open_url("https://app.picardata.com/login")
-   email("shaad@shaadandassociates.com ")
-   pass("Aa12345!")
+   email("michael.sunhaki@emewlabs.com")
+   pass("Mikesunhaki1986")
    waiting(10)
 end
 
