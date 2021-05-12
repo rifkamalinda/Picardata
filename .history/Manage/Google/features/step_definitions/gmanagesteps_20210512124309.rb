@@ -4,7 +4,6 @@ require_relative '../support/hook.rb'
 RSpec::Expectations::ExpectationNotMetError
 
 Given('user should see text home screen') do
-  sleep(10)
   homepage()
   sleep(10)
 end
@@ -13,19 +12,16 @@ Given('user click on Integrated App') do
   $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[2]/div/div[2]/ul/li[2]/a').click
   sleep(10)
   $driver.find_element(:xpath, '//*[@id="list-tab"]/a/div[1]/a').click
-  sleep(5)
+  sleep(10)
 end
 
 Then('user click on View Picardata on Google') do
-  menus = $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[3]/div/div[2]/div[4]').text.include?("Google")
-  if menus == true
-    $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[3]/div/div[2]/div[4]/div[1]/div/div/div/div/div[3]/button').click  
-  elsif menus == false
+  menus = $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[4]').text.include?("Google")
+  if menus == false
     $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[5]/div/div/span[2]').click
-    return menus
   end
-  #sleep(3)  
-  #$driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[4]/div/div/div/div/div/div[3]/button').click
+  sleep(3)  
+  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[4]/div/div/div/div/div/div[3]/button').click
   sleep(5)
 end
 
@@ -129,15 +125,14 @@ Then('user click remove on selected user') do
 end
 
 Then('user click on selected user') do
-  sleep(10)
   list_before()
   sleep(3)
   $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[2]/div[3]/div[2]/div[2]/div/ul/li[3]/a').click
-  sleep(5)
+  sleep(3)
 end
 
 Then('user click on delete') do
-  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[2]/div[3]/div[3]/div/div/div[3]/button[2]').click
+  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[2]/div[3]/div[2]/div/div/div[3]/button[2]').click
   sleep(3)
 end
 

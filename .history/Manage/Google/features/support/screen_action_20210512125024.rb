@@ -31,15 +31,21 @@ def homepage()
 end
 
 def list_before()
-    $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[2]/div[3]/div[2]/div[2]/div/ul').size
+    list_A = $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[2]/div[3]/div[2]/div[2]/div/ul').length
+    if list_A > 0
+        return
+    end
 end 
 
 def list_after()
-    $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[2]/div[3]/div[2]/div[2]/div/ul').size
+    list_B = $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[2]/div[3]/div[2]/div[2]/div/ul').length
+    if list_B > 0
+        return
+    end
 end 
 
 def confirm_deleted()
-    if list_before() != list_after()
+    if list_before() > list_after()
         return
     end
 end         

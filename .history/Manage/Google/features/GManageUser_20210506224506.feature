@@ -8,7 +8,7 @@ And user click on Integrated App
 Then user click on View Picardata on Google
 And user select Manage App
 
-@GCUser
+@GMCUser
 Scenario: Verify Create New user
 And user should see text home screen
 And user click on Integrated App
@@ -21,7 +21,7 @@ And user input email
 And user input password
 Then user click on save button
 
-@GCGroup
+@GMCGroup
 Scenario: Verify Create New Group
 And user should see text home screen
 And user click on Integrated App
@@ -34,7 +34,7 @@ And user input description
 And user click on save
 Then new group should be appears
 
-@GUAdd
+@GMCAdd
 Scenario: Verify Add User
 And user should see text home screen
 And user click on Integrated App
@@ -46,7 +46,7 @@ And click on close button
 And click on View
 Then Verify user already added
 
-@GURemove
+@GMURemove
 Scenario: Verify Remove User
 And user should see text home screen
 And user click on Integrated App
@@ -57,7 +57,7 @@ And user click remove on selected user
 And click on close button
 Then click on View
 
-@GUDel
+@GMUDel
 Scenario: Verify Remove User
 And user should see text home screen
 And user click on Integrated App

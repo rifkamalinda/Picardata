@@ -137,7 +137,7 @@ Then('user click on selected user') do
 end
 
 Then('user click on delete') do
-  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[2]/div[3]/div[3]/div/div/div[3]/button[2]').click
+  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[2]/div[3]/div[2]/div/div/div[3]/button[2]').click
   sleep(3)
 end
 

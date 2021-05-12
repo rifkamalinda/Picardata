@@ -13,7 +13,7 @@ Given('user click on Integrated App') do
   $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[2]/div/div[2]/ul/li[2]/a').click
   sleep(10)
   $driver.find_element(:xpath, '//*[@id="list-tab"]/a/div[1]/a').click
-  sleep(5)
+  sleep(10)
 end
 
 Then('user click on View Picardata on Google') do
@@ -129,15 +129,14 @@ Then('user click remove on selected user') do
 end
 
 Then('user click on selected user') do
-  sleep(10)
   list_before()
   sleep(3)
   $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[2]/div[3]/div[2]/div[2]/div/ul/li[3]/a').click
-  sleep(5)
+  sleep(3)
 end
 
 Then('user click on delete') do
-  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[2]/div[3]/div[3]/div/div/div[3]/button[2]').click
+  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[2]/div[3]/div[2]/div/div/div[3]/button[2]').click
   sleep(3)
 end
 

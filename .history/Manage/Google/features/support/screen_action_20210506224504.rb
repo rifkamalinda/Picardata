@@ -21,25 +21,9 @@ def waiting(int)
 end
 
 def homepage()
-    home_page = $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[1]/div/div[1]/div').text.include?("Apps")
-    if home_page == true
-        return
-    end 
-    log("true")   
+    home_page = $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div/div[1]/div/div[1]/div/div[1]').text
+    home_page.should == "Dashboard"
     sleep(5)
-    #screenshot("dashboard")
+    screenshot("dashboard")
 end
 
-def list_before()
-    $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[2]/div[3]/div[2]/div[2]/div/ul').size
-end 
-
-def list_after()
-    $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[2]/div[3]/div[2]/div[2]/div/ul').size
-end 
-
-def confirm_deleted()
-    if list_before() != list_after()
-        return
-    end
-end         
