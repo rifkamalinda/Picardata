@@ -1,6 +1,6 @@
 Before do
     options = Selenium::WebDriver::Chrome::Options.new
-    options.add_argument('--headless')
+    #options.add_argument('--headless')
     options.add_argument('--no-sandbbox')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--start-maximized')
@@ -10,8 +10,8 @@ Before do
     email("shaad@shaadandassociates.com")
     pass("Aa12345!")
     sleep(10)
- end
+end
  
- After do
+After do
     $driver.quit
- end
+end

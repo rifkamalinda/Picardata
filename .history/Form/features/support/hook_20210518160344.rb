@@ -10,8 +10,8 @@ Before do
     email("shaad@shaadandassociates.com")
     pass("Aa12345!")
     sleep(10)
- end
+end
  
- After do
+After do
     $driver.quit
- end
+end
