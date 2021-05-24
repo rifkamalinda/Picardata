@@ -98,18 +98,7 @@ And('user click on send button') do
   sleep(5)
 end
 
-And('user click on link menus') do
-  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div/div[4]/div/div/div/div/div[2]/div[2]/span[5]').click
+And('user input subject') do
+  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div/div[4]/div/div/div/div/div[2]/div[3]/span/span[3]/input').send_keys('Tes Share Forms')
   sleep(3)
-end  
-
-And('user click on copy button') do
-  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div/div[4]/div/div/div/div/div[3]/button').click
-  sleep(3)
-end  
-
-Then('verify text already copied') do
-  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[1]').text.include?('Success copy link to your clipboard')
-  log("true")
-  sleep(5)
 end  

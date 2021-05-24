@@ -110,6 +110,5 @@ end
 
 Then('verify text already copied') do
   $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[1]').text.include?('Success copy link to your clipboard')
-  log("true")
   sleep(5)
 end  
