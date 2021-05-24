@@ -44,16 +44,8 @@ def confirm_deleted()
     end
 end  
 
-def form_title(words)
-    words.sample+(rand(999)+100).to_s()
-end
+def form_title()
 
-def title_form()
-    title = $driver.find_element(:name, 'name')
-    title.click
-    title.clear
-    title.send_keys(form_title(['TEST']))
-end
 
 def short_answer()
     $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[4]/form/div[2]/div/div/div[1]/div/button').click

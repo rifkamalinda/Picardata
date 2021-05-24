@@ -69,31 +69,3 @@ Then('verify form already appears') do
   log("true")
   sleep(5)
 end
-
-And('user click share on the form selected') do
-  form = $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div/div[2]/div[5]/div[1]').text.include?('Share')
-  if form == true
-    $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div/div[2]/div[5]/div[1]/div/div/div[2]/div[1]/button').click
-  end  
-  sleep(5)
-end
-
-And('user input email address') do
-  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div/div[4]/div/div/div/div/div[2]/div[3]/span/span[1]/input').send_keys('tesmike111@gmail.com')
-  sleep(3)
-end
-
-And('user input subject') do
-  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div/div[4]/div/div/div/div/div[2]/div[3]/span/span[2]/input').send_keys('Tes Share')
-  sleep(3)
-end
-
-And('user input massage') do
-  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div/div[4]/div/div/div/div/div[2]/div[3]/span/span[3]/input').send_keys('Tes Share Forms') 
-  sleep(3)
-end
-
-And('user click on send button') do
-  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div/div[4]/div/div/div/div/div[3]/button').click 
-  sleep(5)
-end

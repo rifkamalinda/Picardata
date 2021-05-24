@@ -52,7 +52,7 @@ def title_form()
     title = $driver.find_element(:name, 'name')
     title.click
     title.clear
-    title.send_keys(form_title(['TEST']))
+    title.send_keys(form_title('TEST'))
 end
 
 def short_answer()

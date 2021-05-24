@@ -16,14 +16,3 @@ And user click on see preview form
 And user click on close preview
 And user select to back
 #Then verify form already appears
-
-@ShareEmail
-Scenario: Verify user can create new Forms
-And user should see text home screen
-And user click on Forms menus
-And user click share on the form selected
-And user input email address
-And user input subject
-And user input massage
-Then user click on send button
-#Then verify that form already shared
