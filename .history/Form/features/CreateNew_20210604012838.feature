@@ -44,8 +44,8 @@ And user should see text home screen
 And user click on Forms menus
 And user click on open
 And user change title
-And user change description
 And user change question
 And user change answer type
+And user change description
 And user add image
 Then user select to back to menus

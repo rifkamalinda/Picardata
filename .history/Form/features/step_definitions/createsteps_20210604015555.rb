@@ -125,6 +125,7 @@ And('user change title') do
 end
 
 And('user change question') do
+  $driver.find_element(:name, 'question').send_keys(:backspace)
   $driver.find_element(:name, 'question').send_keys(" edit")
   sleep(3)
 end
@@ -143,13 +144,13 @@ end
 
 And('user add image') do
   $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[4]/form/div[2]/div/div/div[3]/div[1]/div/div[3]/button').click
-  sleep(8)
-  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[4]/form/div[2]/div/div/div[2]/div[2]/button').click
-  sleep(8)
-  filename = 'groot.jpeg'
+  sleep(2)
+  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[4]/form/div[2]/div/div/div[3]/div/div/button').click
+  sleep(2)
+  filename = 'Baby_Groot.jpeg'
   file = File.join(Dir.pwd, filename)
-  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[4]/form/div[2]/div/div/div[2]/div[2]/div/div').send_keys file
-  sleep(10)
+  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[4]/form/div[2]/div/div/div[3]/div/div/div/div').send_keys file
+  sleep(5)
 end
 
 Then('user select to back to menus') do

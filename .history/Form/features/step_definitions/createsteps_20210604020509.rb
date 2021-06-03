@@ -146,10 +146,10 @@ And('user add image') do
   sleep(8)
   $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[4]/form/div[2]/div/div/div[2]/div[2]/button').click
   sleep(8)
-  filename = 'groot.jpeg'
+  filename = 'Baby_Groot.jpeg'
   file = File.join(Dir.pwd, filename)
-  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[4]/form/div[2]/div/div/div[2]/div[2]/div/div').send_keys file
-  sleep(10)
+  $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[2]/div[4]/form/div[2]/div/div/div[3]/div/div/div/div').send_keys file
+  sleep(5)
 end
 
 Then('user select to back to menus') do
