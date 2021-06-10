@@ -14,8 +14,8 @@ When('user login correctly') do
 end
 
 Then('user should see text {string}') do |string|
-  string = $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div/div[1]/div/div[1]/div/div[1]/div').text
-  string.should == "Dashboard"
+  string = $driver.find_element(:xpath, '//*[@id="__layout"]/div/div[3]/div/div/div[3]/div/div[2]/div[1]/div[1]/div/div').text
+  string.should == "Integrated Apps"
   log("true")
   sleep(5)
   screenshot("dashboard")
